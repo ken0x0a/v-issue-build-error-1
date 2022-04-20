@@ -18,5 +18,10 @@ fn test_decode2_method_spec() ? {
 		eprintln('deser_json_map_map')
 		panic(err)
 	}
-	assert res['api']['status'].resp == map{}
+	assert res['api']['status'].resp == {
+		'status': RespSpec{
+			typ: .string_
+			comment: 'Status: MAINTENANCE OPEN'
+		}
+	}
 }

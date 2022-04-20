@@ -31,7 +31,7 @@ pub fn (mut self MethodSpec) decode_json(j json2.Any) ? {
 pub fn (mut self RespSpec) decode_json(j json2.Any) ? {
 	obj := j.as_map()
 	self.typ = value_type_decode_json(obj['type'] or { 0 }) ?
-	self.comment = obj['comment'] or { 0 }.str()
-	self.example = obj['example'] or { 0 }.str()
+	self.comment = obj['comment'] or { '' }.str()
+	self.example = obj['example'] or { '' }.str()
 	self.nullable = obj['nullable'] or { 0 }.bool()
 }
